@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <!-- Bootstrap CSS y estilos personalizados -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="fotos/logoo.png" alt="Logo"height="60px"  >
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="remeras.html">Remeras</a></li>
+          <li class="nav-item"><a class="nav-link" href="shorts.html">Shorts</a></li>
+          <li class="nav-item"><a class="nav-link" href="camisas.html">Camisas</a></li>
+          <li class="nav-item"><a class="nav-link" href="pantalones.html">Pantalones</a></li>
+        </ul>
+        <li class="nav-item cart-icon-container">
+          <a class="nav-link" href="javascript:void(0)">
+            <i class="fas fa-shopping-cart" style="font-size: 24px; color: white;"></i>
+          </a>
+          <div class="cart-dropdown" id="cart-dropdown">
+            <h5>Carrito</h5>
+            <div id="cart-items-list"></div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h2 class="text-center pt-5 pb--2">Explora Nuestro Catálogo de Ropa</h2>
+    <div class="row mt-5">
+
+      <div class="col-md-3 catalogo-section" id="remeras">
+        <div class="catalogo-item">
+          <img src="fotos/remera.jpg" class="card-img-top" alt="Remera">
+          <div class="overlay">
+            <h2>Remeras</h2>
+            <a href="remeras.html" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 catalogo-section" id="shorts">
+        <div class="catalogo-item">
+          <img src="fotos/shorts.jpg" class="card-img-top" alt="Shorts">
+          <div class="overlay">
+            <h2>Shorts de baño</h2>
+            <a href="shorts.html" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 catalogo-section" id="camisas">
+        <div class="catalogo-item">
+          <img src="fotos/camisas.jpg" class="card-img-top" alt="Camisas">
+          <div class="overlay">
+            <h2>Camisas</h2>
+            <a href="camisas.html" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 catalogo-section" id="pantalones">
+        <div class="catalogo-item">
+          <img src="fotos/pantalones.jpg" class="card-img-top" alt="Pantalones">
+          <div class="overlay">
+            <h2>Pantalones</h2>
+            <a href="pantalones.html" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <!-- Bootstrap CSS y estilos personalizados -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-d  ark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="fotos/logoo.png" alt="Logo"height="60px"  >
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="remeras.html">Remeras</a></li>
+          <li class="nav-item"><a class="nav-link" href="shorts.html">Shorts</a></li>
+          <li class="nav-item"><a class="nav-link" href="camisas.html">Camisas</a></li>
+          <li class="nav-item"><a class="nav-link" href="pantalones.html">Pantalones</a></li>
+        </ul>
+      </div>
+      <li class="nav-item cart-icon-container">
+        <a class="nav-link" href="javascript:void(0)">
+          <i class="fas fa-shopping-cart" style="font-size: 24px; color: white;"></i>
+        </a>
+        <div class="cart-dropdown" id="cart-dropdown">
+          <h5>Carrito</h5>
+          <div id="cart-items-list"></div>
+
+        </div>
+      </li>
+    </div>
+  </nav>
+
+  <section class="catalogo-section container my-5">
+    <h2 class="text-center pt-5">Explora Nuestra Colección de Shorts</h2>
+    <div class="row mt-5">
+
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="fotos/short1.jpg" class="card-img-top" alt="short 1">
+          <div class="card-body">
+            <h5 class="card-title text-center">Short de baño liso verde oliva</h5>
+            <p class="card-text text-center"><strong>$24.000</strong></p>
+            <a href="catalogo-short1.html" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="fotos/short2.jpg" class="card-img-top" alt="short 2">
+          <div class="card-body">
+            <h5 class="card-title text-center">Short de baño estampado negro</h5>
+            <p class="card-text text-center"><strong>$22.000</strong></p>
+            <a href="catalogo-short2.html" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="fotos/short3.jpg" class="card-img-top" alt="short 3">
+          <div class="card-body">
+            <h5 class="card-title text-center">Short de baño liso azul marino</h5>
+            <p class="card-text text-center"><strong>$21.500</strong></p>
+            <a href="catalogo-short3.html" class="btn btn-primary">Ver Más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 pt-4">
+        <div class="card">
+          <img src="fotos/short4.jpg" class="card-img-top" alt="short 4">
+          <div class="card-body">
+            <h5 class="card-title text-center">Short de baño liso coral</h5>
+            <p class="card-text text-center"><strong>$20.000</strong></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+   /* Navbar personalizado */
+   .navbar {
+    font-size: 20px;
+  }
+  .navbar-brand img {
+    width: 60px;
+  }
+
+  
+  
+.hero-image {
+  background-image: url("fotos/no-revisions-kWVImL5QxJI-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(252, 252, 252);
+  text-align: center;
+  position: relative;
+}
+
+.hero-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: brightness(50%);
+  z-index: 1;
+}
+
+/* Estilo del contenido */
+.hero-image .container {
+  position: relative;
+  z-index: 2; /* Coloca el texto encima de la superposición */
+}
+
+
+  /* Sección de productos destacados */
+  .product-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Sección de ofertas */
+  .ofertas {
+    background: #f8f9fa;
+    padding: 3rem 0;
+  }
+
+
+
+
+  /* Estilo para los detalles del producto */
+.product-details {
+  margin-top: 90px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilo del carrito desplegable */
+.cart-dropdown {
+  position: absolute;
+  top: 60px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  display: none;
+  padding: 15px;
+  z-index: 10;
+}
+
+.cart-icon-container:hover .cart-dropdown {
+  display: block;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.catalogo-section {
+  margin-top: 80px;
+}
+.catalogo-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-details {
+  margin-top: 90px;
+}
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+/* Estilos para el carrito */
+.cart-icon-container {
+  position: relative;
+}
+
+.cart-dropdown {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ddd;
+  display: none;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-icon-container:hover .cart-dropdown {
+  display: block;
+}
+
+.cart-dropdown h5 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.cart-dropdown .btn {
+  width: 100%;
+}
+
+.catalogo-section {
+  margin-top: 20px;
+}
+
+.catalogo-item {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  height: 550px;
+}
+
+.catalogo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.catalogo-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.catalogo-item:hover .overlay {
+  opacity: 1;
+}
+
+.catalogo-item .overlay h2 {
+  font-size: 1.7rem; /* Tamaño del texto más grande */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.catalogo-item .overlay .btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.catalogo-item .overlay .btn:hover {
+  background-color: #0056b3;
+}
+
+.catalogo-item:hover {
+  transform: scale(1.05);
+}
+
+.catalogo-item img:hover {
+  transform: scale(1.1);
+}
+  
