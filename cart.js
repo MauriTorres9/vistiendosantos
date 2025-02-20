@@ -1,7 +1,7 @@
 // Array para almacenar los productos en el carrito (con persistencia en localStorage)
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-// Función para renderizar los productos en el carrito
+// Funcion para renderizar los productos en el carrito
 function renderCartItems() {
   const cartItemsList = document.getElementById("cart-items-list");
   cartItemsList.innerHTML = "";
@@ -57,9 +57,9 @@ document.querySelectorAll('[id^="add-to-cart-btn"]').forEach(button => {
     const productName = this.getAttribute('data-product-name');
     const productPrice = this.getAttribute('data-product-price');
     
-    addToCart(productName, parseFloat(productPrice)); // Usamos parseFloat para asegurar que el precio sea un número
+    addToCart(productName, parseFloat(productPrice)); // Usamos parseFloat para asegurar que el precio sea un numero
   });
 });
 
-// Renderizar el carrito al cargar la página
+// Renderizar el carrito al cargar la pagina
 document.addEventListener("DOMContentLoaded", renderCartItems);

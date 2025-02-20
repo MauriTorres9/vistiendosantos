@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="fotos/logoo.png" alt="Logo"height="60px"  >
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> 
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html#destacados">Ropa Destacada</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#ofertas">Ofertas del Mes</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+            </ul>
+            <li class="nav-item cart-icon-container">
+              <a class="nav-link" href="javascript:void(0)">
+                <i class="fas fa-shopping-cart" style="font-size: 24px; color: white;"></i>
+              </a>
+              <div class="cart-dropdown" id="cart-dropdown">
+                <h5>Carrito</h5>
+                <div id="cart-items-list"></div>
+                <a href="pago.html" class="btn btn-primary" id="checkout-btn">Proceder al pago</a>
+              </div>
+            </li>
+          </div>
+        </div>
+      </nav>
+    <div class="container mt-5">
+        <h2 class="mb-4">Resumen del Pedido</h2>
+        <div id="cart-summary" class="mb-3"></div>
+        
+        <h3>Total: <span id="total-price">$0</span></h3>
+        
+        <h2 class="mt-4">Información de Pago</h2>
+        <form id="payment-form">
+            <div class="mb-3">
+                <label for="full-name" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="full-name" placeholder="Ej: Mauricio Torres" required>
+            </div>
+            <div class="mb-3">
+                <label for="card-number" class="form-label">Número de Tarjeta</label>
+                <input type="text" class="form-control" id="card-number" placeholder="1234 5678 9101 1121" required>
+            </div>
+            <div class="mb-3">
+                <label for="Dirección" class="form-label">Dirección de Envío</label>
+                <input type="text" class="form-control" id="Dirección" placeholder="Ej: San Martin 842" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Pagar</button>
+        </form>
+    </div>
+
+    <script>
+        // Recuperar productos del localStorage
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Función para mostrar los productos en la página de pago
+        function renderCartSummary() {
+            const cartSummary = document.getElementById("cart-summary");
+            cartSummary.innerHTML = "";
+
+            let total = 0;
+
+            if (cartItems.length === 0) {
+                cartSummary.innerHTML = "<p>Tu carrito está vacío</p>";
+                document.getElementById("total-price").innerText = "$0";
+                return;
+            }
+
+            cartItems.forEach((item, index) => {
+                total += item.price;
+
+                cartSummary.innerHTML += `
+                    <div class="d-flex justify-content-between border-bottom py-2">
+                        <p>${item.name}</p>
+                        <p>$${item.price.toFixed(2)}</p>
+                        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Eliminar</button>
+                    </div>
+                `;
+            });
+
+            document.getElementById("total-price").innerText = `$${total.toFixed(2)}`;
+        }
+
+        document.addEventListener("DOMContentLoaded", renderCartSummary);
+
+        // Función para eliminar un producto del carrito
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems)); // Actualizar localStorage
+            renderCartSummary(); // Volver a renderizar el carrito
+        }
+
+        // Simulación de pago
+        document.getElementById("payment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obtener datos del formulario
+            const fullName = document.getElementById("full-name").value;
+            const cardNumber = document.getElementById("card-number").value;
+            const Dirección = document.getElementById("Dirección").value;
+
+            // Validar que los campos no estén vacíos
+            if (!fullName || !cardNumber || !Dirección) {
+                alert("Por favor, complete todos los campos.");
+                return;
+            }
+
+            alert(`Pago realizado con éxito por ${fullName}.     
+                  Los productos serán enviados a: ${Dirección}`);
+            
+            localStorage.removeItem("cartItems"); // Vaciar carrito después del pago
+            window.location.href = "index.html"; // Redirigir a la página principal
+        });
+    </script>
+</body>
+</html>
